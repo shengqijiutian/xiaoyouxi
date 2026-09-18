@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+  <meta name="theme-color" content="#f8cfe0">
+  <meta name="description" content="一款轻松可爱的星星主题三消网页小游戏">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='18' fill='%23f6d5e6'/%3E%3Cpath d='m32 8 6.8 14 15.4 2.2-11.1 10.9 2.6 15.3L32 43.2l-13.7 7.2 2.6-15.3L9.8 24.2 25.2 22z' fill='%23fff4a8' stroke='%23b98ad9' stroke-width='3'/%3E%3C/svg%3E">
+  <title>星星消消屋</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+  <div class="ambient ambient-one"></div>
+  <div class="ambient ambient-two"></div>
+  <main id="app" class="app-shell">
+    <section id="home-screen" class="screen home-screen is-active" aria-labelledby="game-title">
+      <div class="home-stars" aria-hidden="true"><span>✦</span><span>♡</span><span>✧</span></div>
+      <div class="logo-orbit" aria-hidden="true">
+        <span class="orbit-star">★</span>
+        <span class="orbit-heart">♥</span>
+      </div>
+      <p class="eyebrow">A tiny cozy match game</p>
+      <h1 id="game-title">星星消消屋</h1>
+      <p class="home-copy">把软乎乎的小图案连在一起，<br>收下一点今天的好心情。</p>
+      <div class="home-actions">
+        <button id="start-button" class="button button-primary" type="button"><span>开始游戏</span><b>✦</b></button>
+        <button id="continue-button" class="button button-secondary" type="button" hidden>继续游戏</button>
+        <button id="settings-button" class="button button-ghost" type="button">设置</button>
+      </div>
+      <p id="home-record" class="home-record">最高记录 · 第 1 关</p>
+      <button id="secret-star" class="secret-star" type="button" aria-label="一颗装饰小星星">✦</button>
+    </section>
+
+    <section id="game-screen" class="screen game-screen" aria-label="游戏棋盘">
+      <header class="game-header">
+        <div class="level-chip">
+          <span>LEVEL</span>
+          <strong id="level-value">1</strong>
+        </div>
+        <div class="header-title">
+          <small id="level-kicker">星星旅程</small>
+          <strong id="goal-text">分数 0/3000</strong>
+        </div>
+        <button id="pause-button" class="icon-button" type="button" aria-label="暂停游戏">Ⅱ</button>
+      </header>
+
+      <div class="stats-row">
+        <div class="stat-card"><span>分数</span><strong id="score-value">0</strong></div>
+        <div class="stat-card stat-moves"><span>剩余步数</span><strong id="moves-value">15</strong></div>
+        <div class="stat-card"><span>最佳连击</span><strong id="best-combo-value">×0</strong></div>
+      </div>
+
+      <div class="board-wrap">
+        <div id="combo-banner" class="combo-banner" aria-live="polite"></div>
+        <div id="board" class="board" role="grid" aria-label="八乘八三消棋盘"></div>
+        <div id="particle-layer" class="particle-layer" aria-hidden="true"></div>
+      </div>
+
+      <div class="game-footer">
+        <div id="perk-strip" class="perk-strip" aria-label="已获得强化"></div>
+        <p id="helper-text" class="helper-text">滑动棋子，或依次点击两个相邻棋子</p>
+      </div>
+    </section>
+  </main>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <div id="easter-message" class="easter-message" aria-live="polite"></div>
+  <div id="modal-root" class="modal-root" aria-live="polite"></div>
+  <noscript>请开启 JavaScript 后游玩《星星消消屋》。</noscript>
+  <script type="module" src="./js/app.js"></script>
+</body>
+</html>
+
